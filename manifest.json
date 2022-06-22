@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "bbshortcut",
+  "version": "1.0",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "48": "icons/s-icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://au.bbcollab.com/*"],
+      "js": ["c_script.js"]
+    }
+  ]
+}
