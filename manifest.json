@@ -14,5 +14,7 @@
       "matches": ["*://au.bbcollab.com/*"],
       "js": ["c_script.js"]
     }
-  ]
+  ],
+
+  "permissions": ["*://*.blackboardcdn.com/*"]
 }
