@@ -6,7 +6,7 @@
   "description": "Adds a red border to all webpages matching mozilla.org.",
 
   "icons": {
-    "48": "icons/s-icon.png"
+    "48": "icons/vector.png"
   },
 
   "content_scripts": [
