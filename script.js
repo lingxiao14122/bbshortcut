@@ -1,16 +1,41 @@
 let sidePanel = false, fullscreen = false;  //false = side panel close, true = side panel open
+let speed = 2; // 2 is 1.0x speed
+
+const reduceSpeedCount = () => {
+    if (speed > 0) {
+        speed--
+    }
+}
+
+const increaseSpeedCount = () => {
+    if (speed < 5) {
+        speed++
+    }
+}
 
 document.addEventListener('keydown', (event) => {
     const keychar = event.key
+
     if (keychar === ">" && event.shiftKey) {
-        console.log("shit forward")
+        const button = document.querySelector('button#speed-dropdown-toggle')
+        button.click()
+        increaseSpeedCount()
+        document.querySelector('ul#inner-speed-dropdown').children[speed].children[0].click()
+        console.log("bbshortcut speed: " + button.childNodes[0].nodeValue.trim())
     }
+
     if (keychar === "<" && event.shiftKey) {
-        console.log("shit backward")
+        const button = document.querySelector('button#speed-dropdown-toggle')
+        button.click()
+        reduceSpeedCount()
+        document.querySelector('ul#inner-speed-dropdown').children[speed].children[0].click()
+        console.log("bbshortcut speed: " + button.childNodes[0].nodeValue.trim())
     }
+
     if (!(event.shiftKey || !event.ctrlKey || event.altKey)) {
         return
     }
+
     if (keychar === "m") {
         console.log("shit mute")
     }
@@ -21,7 +46,7 @@ document.addEventListener('keydown', (event) => {
     }
     // bug: fullscreen are functional but cannot exit fullscreen
     if (keychar === "f") {
-        if(fullscreen === false){
+        if (fullscreen === false) {
             const elem = document.querySelector('button#playback-enter-fullscreen')
             console.log(elem)
             elem.click()
@@ -33,7 +58,7 @@ document.addEventListener('keydown', (event) => {
     }
     if (keychar === "t") {
         // bug: side panel can open but cannot close
-        if(sidePanel === false){
+        if (sidePanel === false) {
             const elem = document.querySelector('button#side-panel-open')
             console.log(elem)
             elem.click()
