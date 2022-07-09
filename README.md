@@ -10,7 +10,7 @@ Go to our Firefox add-on page at [here](https://addons.mozilla.org/en-US/firefox
 | --- | --- |
 | 'C' | Open captions |
 | 'F' | Enter full screen |
-| 'T' | Open or close side panel |
+| 'G' | Open or close side panel |
 | 'D' | Download the record |
 | '<' | Backward the record |
 | '>' | Forward the record |
